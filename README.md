@@ -1,6 +1,13 @@
 # Charted-Particle-Velocity-Simulator
 A small part of a greater project I am working on. This program uses a derived equation from Couloumb's Law to calculate the velocity of either an electron or a proton to a 1d charged bar.
 
+Requires libraries:
+  numpy
+  matplotlib
+  scipy
+  alive_progress
+  colorama
+
 The program can be split into three distinct parts:
   1: Force Build
     In this section of the program the code takes the parameters passed on by the selected parameter list for the chosen particle, and accuracy passed on by the user, to     calculate the force experienced by the particle at each distance from the bar, starting from 5m (the s parameter). This is done by a group of functions, one which       itterates over each value of distance, with a step given by the acceleration varuible, passing on each itteration value (distance value) to a nested function             'forceBuild' which completse the required integral for the corresponding force value using SciPy's quad. function. This value and the distance value are then             appended to a numpy array to be graphed using Matplotlib.
